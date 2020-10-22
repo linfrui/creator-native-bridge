@@ -3,10 +3,13 @@
 从javascript调用本地代码的辅助工具。 
   无需关心什么类型签名、包名。
   调用android和oc的代码相同 支持把js函数直接传入本地代码，处理完功能直接调用js回调
+  
 javascript 
+
   native.callClz("SomeClass", "FuncName", "your string", 2017, true, (str, number, bool) => {  
     cc.log(str, number, bool)
   }) 
+  
 objective-c  
  @interface SomeClass : NSObject 
  +(void) FuncName : (NSString*) str         
@@ -16,6 +19,7 @@ objective-c
     JS::call(cbName, @[@"your string", @2017, Yes]);         
   } 
   @end 
+  
 java  
   class SomeClass {     
     static public void FuncName(String s, double d, boolean b, String cbName) {         
